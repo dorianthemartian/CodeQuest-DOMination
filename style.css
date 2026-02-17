@@ -10,28 +10,65 @@
 
 body {
     background-color: aliceblue;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
-#quiz-container, #score-container {  
-    background-color: white;  
-    width: 60%;  
-    margin: 50px auto;  
-    padding: 20px;  
-    border-radius: 12px;
-    text-align: center;
+body.correct {
+    background-color: green; 
 }
 
-h1, h2, h3 {
-    margin: 16px auto;
+body.incorrect {
+    background-color: red;
 }
 
-button {
-    padding: 8px;
-    border-radius: 6px;
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
     background-color: blanchedalmond;
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 5px 10px;
+    width: 80%;
 }
 
-button:hover {
-    background-color: rgb(231, 211, 182);
-    cursor: pointer;
+.btn.correct {
+    color: green;
+}
+
+.btn.incorrect {
+    color: red;
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 6px 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
