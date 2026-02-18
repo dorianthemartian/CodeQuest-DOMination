@@ -3,8 +3,10 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const resultBox = document.getElementById('resultBox')
 
 let shuffledQuestions, currentQuestionIndex
+let correctAnswers = 0
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -42,6 +44,7 @@ function showQuestion(question) {
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
+    resultBox.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
@@ -51,6 +54,9 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
+    if (correct) {
+        correctAnswers++
+    }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -58,6 +64,9 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
+        resultBox.innerText = correctAnswers.toString() + "/" + shuffledQuestions.length.toString()
+        correctAnswers = 0
+        resultBox.classList.remove('hide')
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
