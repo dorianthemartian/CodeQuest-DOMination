@@ -33,6 +33,11 @@ body.incorrect {
     padding: 10px;
 }
 
+#question {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -45,7 +50,7 @@ body.incorrect {
     border: 2px solid;
     border-radius: 4px;
     padding: 5px 10px;
-    width: 80%;
+    width: 100%;
 }
 
 .btn.correct {
