@@ -89,21 +89,30 @@ function clearStatusClass(element) {
 
 const questions = [
     {
-        question: 'What is 2 + 2?',
+        question: 'Inside which HTML element do we put the JavaScript?',
         answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '52', correct: false },
-            { text: '12', correct: false }
+            { text: '<script>', correct: true },
+            { text: '<javascript>', correct: false },
+            { text: '<js>', correct: false },
+            { text: '<scripting>', correct: false }
         ]
     },
     {
-        question: 'What is 4 + 2?',
+        question: 'Where is the correct place to insert a JavaScript?',
         answers: [
-            { text: '4', correct: false },
-            { text: '6', correct: true },
-            { text: '42', correct: false },
-            { text: '8', correct: false }
+            { text: 'The <head> section.', correct: false },
+            { text: 'Both <head> and <body>.', correct: true },
+            { text: 'The <body> section.', correct: false },
+            { text: 'The <footer> section.', correct: false }
+        ]
+    },
+    {
+        question: 'What is the correct syntax for referring to an external script called "main.js"?',
+        answers: [
+            { text: '<script href="main.js">', correct: false },
+            { text: '<script name="main.js">', correct: false },
+            { text: '<script src="main.js">', correct: true },
+            { text: '<js src="main.js">', correct: false }
         ]
     }
 ]
